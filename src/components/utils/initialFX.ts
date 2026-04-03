@@ -1,9 +1,12 @@
+// @ts-ignore
 import { SplitText } from "gsap-trial/SplitText";
 import gsap from "gsap";
 import { smoother } from "../Navbar";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 export function initialFX() {
   document.body.style.overflowY = "auto";
+  ScrollTrigger.refresh();
   smoother.paused(false);
   document.getElementsByTagName("main")[0].classList.add("main-active");
   gsap.to("body", {

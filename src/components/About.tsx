@@ -6,9 +6,7 @@ const About = () => {
       <div className="about-me">
         <h3 className="title">About Me</h3>
         <p className="para">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic quis
-          dolores numquam iusto Ratione earum ducimus autem id iure pariatur
-          dolorum quae maiores.
+          I am a Bachelor of Technology student at the Indian Institute of Technology (BHU), Varanasi. I am passionate about web development, with skills in React, Node.js, and MongoDB. I enjoy building responsive and dynamic applications, focusing on clean code and great user experiences.
         </p>
       </div>
     </div>

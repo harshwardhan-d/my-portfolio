@@ -20,6 +20,9 @@ const Navbar = () => {
       ignoreMobileResize: true,
     });
 
+    // CRITICAL: Refresh triggers so pin-spacers are correctly calculated
+    ScrollTrigger.refresh();
+
     smoother.scrollTop(0);
     smoother.paused(true);
 
@@ -35,22 +38,25 @@ const Navbar = () => {
         }
       });
     });
-    window.addEventListener("resize", () => {
-      ScrollSmoother.refresh(true);
-    });
+    const resizeFn = () => ScrollSmoother.refresh(true);
+    window.addEventListener("resize", resizeFn);
+    return () => {
+      window.removeEventListener("resize", resizeFn);
+      smoother.kill();
+    };
   }, []);
   return (
     <>
       <div className="header">
         <a href="/#" className="navbar-title" data-cursor="disable">
-          Logo
+          HD
         </a>
         <a
-          href="mailto:example@mail.com"
+          href="mailto:harshwardhandhaneliya@gmail.com"
           className="navbar-connect"
           data-cursor="disable"
         >
-          example@mail.com
+          harshwardhandhaneliya@gmail.com
         </a>
         <ul>
           <li>
